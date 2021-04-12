@@ -1,0 +1,19 @@
+<form>
+  <h1>{{ device.name }}</h1>
+  <h1>{{ device.type }}</h1>
+  <ng-container *ngIf="device.type === protocol.OPC_UA">
+    <h1>{{ device?.password }}</h1>
+  </ng-container>
+  <ng-container *ngIf="device.type === protocol.MODBUS_TCP">
+    <h1>{{ device?.byteOrder }}</h1>
+  </ng-container>
+
+  <!--
+
+<div [ngSwitch]="device.type">
+  <div *ngSwitchCase="protocol.OPC_UA">
+    <h1>{{ device?.password }}</h1>
+  </div>
+</div>
+  -->
+</form>
